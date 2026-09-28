@@ -1,0 +1,36 @@
+{
+  "dataset_version": "demo-dataset-v1",
+  "synthetic": true,
+  "label": "SYNTHETIC / DEMONSTRATION DATA",
+  "generated_for": "SIH26148 FORGE prototype",
+  "events": [
+    {
+      "event_id": 4624,
+      "provider": "Microsoft-Windows-Security-Auditing",
+      "channel": "Security",
+      "timestamp_utc": "2026-09-25T14:10:00Z",
+      "task": "Logon",
+      "level": "Information",
+      "computer": "FORENSIC-TARGET-01",
+      "message": "An account was successfully logged on. User: CORP\\john.doe (Logon Type: 2)",
+      "data": {
+        "TargetUserName": "john.doe",
+        "LogonType": 2
+      }
+    },
+    {
+      "event_id": 4688,
+      "provider": "Microsoft-Windows-Security-Auditing",
+      "channel": "Security",
+      "timestamp_utc": "2026-09-25T14:15:22Z",
+      "task": "Process Creation",
+      "level": "Information",
+      "computer": "FORENSIC-TARGET-01",
+      "message": "A new process has been created: powershell.exe by svchost.exe",
+      "data": {
+        "NewProcessName": "powershell.exe",
+        "CommandLine": "powershell.exe -ExecutionPolicy Bypass"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "dataset_version": "demo-dataset-v1",
+  "synthetic": true,
+  "label": "SYNTHETIC / DEMONSTRATION DATA",
+  "generated_for": "SIH26148 FORGE prototype",
+  "registry_keys": [
+    {
+      "hive": "HKCU",
+      "key_path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "value_name": "OneDrive",
+      "value_type": "REG_SZ",
+      "value_data": "C:\\Users\\john.doe\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe /background",
+      "modified_time_utc": "2026-09-20T10:00:00Z"
+    },
+    {
+      "hive": "HKLM",
+      "key_path": "Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+      "value_name": "UpdateFix",
+      "value_type": "REG_SZ",
+      "value_data": "C:\\Users\\Public\\Downloads\\updater_svc.exe",
+      "modified_time_utc": "2026-09-25T14:16:10Z"
+    }
+  ]
+}

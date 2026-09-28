@@ -1,0 +1,26 @@
+[
+  {
+    "path": "./datasets/computer/files/network_config.json",
+    "filename": "network_config.json",
+    "algorithm": "SHA256",
+    "hash": "17467f4d5505eded66af665de19bef207956d1808a2c3f65fe36c2ef89d6ed66"
+  },
+  {
+    "path": "./datasets/computer/files/system_info.txt",
+    "filename": "system_info.txt",
+    "algorithm": "SHA256",
+    "hash": "5c7bde21ae107f1c6302f62280224ae6216fa1bda683e29ec4c9893fb53e6de8"
+  },
+  {
+    "path": "./datasets/computer/files/update_script.ps1",
+    "filename": "update_script.ps1",
+    "algorithm": "SHA256",
+    "hash": "96fc673a286ef4d52f7b61d6a0aef1152511cfc4878694dc4b94571ab0d6a6b3"
+  },
+  {
+    "path": "./datasets/computer/files/updater_svc.exe.txt",
+    "filename": "updater_svc.exe.txt",
+    "algorithm": "SHA256",
+    "hash": "3bcfe9cebe4bc8db2eec15ff2b4a8600cf71b28e0ef4bf3eed80240ac8597138"
+  }
+]

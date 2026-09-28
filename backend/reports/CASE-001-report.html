@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FORGE Forensic Report - CASE-001</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }
+        .container { max-width: 1100px; margin: 0 auto; background: #1e293b; padding: 32px; border-radius: 8px; border: 1px solid #334155; }
+        h1 { color: #38bdf8; border-bottom: 2px solid #0284c7; padding-bottom: 8px; }
+        h2 { color: #a855f7; margin-top: 32px; border-bottom: 1px solid #475569; padding-bottom: 4px; }
+        .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        .badge-high { background-color: #ef4444; color: #ffffff; }
+        .badge-medium { background-color: #f59e0b; color: #000000; }
+        .badge-info { background-color: #3b82f6; color: #ffffff; }
+        .badge-approved { background-color: #22c55e; color: #ffffff; }
+        .alert-box { background: #1e1b4b; border-left: 4px solid #6366f1; padding: 12px 16px; margin: 16px 0; font-size: 13px; line-height: 1.5; }
+        .safety-box { background: #451a03; border-left: 4px solid #f97316; padding: 12px 16px; margin: 16px 0; font-size: 13px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+        th, td { border: 1px solid #334155; padding: 8px 12px; text-align: left; }
+        th { background: #0f172a; color: #94a3b8; }
+        tr:nth-child(even) { background: #182234; }
+        code { background: #090d16; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px; color: #38bdf8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FORGE — Forensic Analysis Report</h1>
+        <p><strong>Case ID:</strong> <code>CASE-001</code> | <strong>Execution ID:</strong> <code>EXE-202404</code></p>
+        <p><strong>Generated At:</strong> 2026-09-26T15:23:22.570111+00:00</p>
+        
+        <div class="safety-box">
+            <strong>MANDATORY SAFETY BOUNDARY STATEMENT:</strong><br>
+            FORGE is intended only for authorized digital-forensic investigations and controlled security environments. It does not bypass, disable, evade, or interfere with endpoint security controls.
+        </div>
+
+        <div class="alert-box">
+            <strong>DATASET DISCLAIMER:</strong><br>
+            SYNTHETIC / DEMONSTRATION DATA: Results generated from synthetic datasets for SIH26148 FORGE prototype.
+        </div>
+
+        <h2>1. Executive Summary & Policy Compliance</h2>
+        <p>Policy Version: <code>standard-read-only-v1</code> | Policy Decision: <span class="badge badge-approved">APPROVED</span></p>
+        <p>Total Evidence Items Analyzed: 16 | Total Timeline Events: 0 | Total Findings: 4</p>
+
+        <h2>2. Evidence Inventory & Cryptographic Hashes (SHA-256)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Evidence ID</th>
+                    <th>Type</th>
+                    <th>Source Path / Collector</th>
+                    <th>SHA-256 Hash</th>
+                    <th>Records</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><code>EVD-000001</code></td>
+                    <td>HOST_INFO</td>
+                    <td>FORGE_HOST_INFO_COLLECTOR</td>
+                    <td><code>f01e3968f475cbe6926df165...</code></td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000002</code></td>
+                    <td>PROCESS_LIST</td>
+                    <td>FORGE_PROCESS_LIST_COLLECTOR</td>
+                    <td><code>e55c016c7c67e935560891d7...</code></td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000003</code></td>
+                    <td>SERVICE_LIST</td>
+                    <td>FORGE_SERVICE_LIST_COLLECTOR</td>
+                    <td><code>26328e7d35cb62bc4b942e71...</code></td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000004</code></td>
+                    <td>SYSTEM_CONFIG</td>
+                    <td>FORGE_SYSTEM_CONFIG_COLLECTOR</td>
+                    <td><code>f01e3968f475cbe6926df165...</code></td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000005</code></td>
+                    <td>FILE_LIST</td>
+                    <td>FORGE_FILE_LIST_COLLECTOR</td>
+                    <td><code>3e9a4b826a9d3338e6cda0cc...</code></td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000006</code></td>
+                    <td>FILE_METADATA</td>
+                    <td>FORGE_FILE_METADATA_COLLECTOR</td>
+                    <td><code>79e03a3edf71ebdad587712f...</code></td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000007</code></td>
+                    <td>FILE_HASHES</td>
+                    <td>FORGE_HASH_FILES_COLLECTOR</td>
+                    <td><code>297ee5ad98494624cfe669b5...</code></td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000008</code></td>
+                    <td>EVENT_LOGS</td>
+                    <td>FORGE_EVENT_LOGS_COLLECTOR</td>
+                    <td><code>b873e2ddc880664e694c2439...</code></td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000009</code></td>
+                    <td>EVENT_LOGS</td>
+                    <td>FORGE_EVENT_LOGS_COLLECTOR</td>
+                    <td><code>7e858547b69f049f58227ce8...</code></td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000010</code></td>
+                    <td>PCAP_LOAD</td>
+                    <td>FORGE_PCAP_LOAD_COLLECTOR</td>
+                    <td><code>61569a8ff2ed3b0da9dbe4e1...</code></td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000011</code></td>
+                    <td>NETWORK_CONNECTIONS</td>
+                    <td>FORGE_NETWORK_CONNECTIONS_COLLECTOR</td>
+                    <td><code>586c5d7f2638095893a22039...</code></td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000012</code></td>
+                    <td>DNS_ACTIVITY</td>
+                    <td>FORGE_DNS_ACTIVITY_COLLECTOR</td>
+                    <td><code>8e7f86c38ea645e7f48139da...</code></td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000013</code></td>
+                    <td>PROTOCOL_STATS</td>
+                    <td>FORGE_PROTOCOL_STATS_COLLECTOR</td>
+                    <td><code>78cf07ae1b4dc92b1af3d728...</code></td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000014</code></td>
+                    <td>FLOW_SUMMARY</td>
+                    <td>FORGE_FLOW_SUMMARY_COLLECTOR</td>
+                    <td><code>9e4e1c591d4baec1f12a78c5...</code></td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000015</code></td>
+                    <td>BUILD_TIMELINE</td>
+                    <td>FORGE_BUILD_TIMELINE_COLLECTOR</td>
+                    <td><code>0818cfd02c2ac7f2e1854446...</code></td>
+                    <td>25</td>
+                </tr>
+
+                <tr>
+                    <td><code>EVD-000016</code></td>
+                    <td>ANALYZE_FINDINGS</td>
+                    <td>FORGE_ANALYZE_FINDINGS_COLLECTOR</td>
+                    <td><code>88edd1a21fa655fc48bccde4...</code></td>
+                    <td>4</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h2>3. Forensic Findings & Technical Correlation</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Finding ID</th>
+                    <th>Severity</th>
+                    <th>Category</th>
+                    <th>Title & Observed Evidence</th>
+                    <th>Derived Analysis & Action Required</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><code>FND-PROC-001</code></td>
+                    <td><span class="badge badge-high">HIGH</span></td>
+                    <td>PROCESS_ANOMALY</td>
+                    <td>
+                        <strong>Execution Policy Bypass Command Identified</strong><br>
+                        <em>Observed:</em> Process start event observed: Process Start: powershell.exe (PID 2840) -> Cmdline: powershell.exe -ExecutionPolicy Bypass -File C:\Users\john.doe\AppData\Local\Temp\update_script.ps1 | User: CORP\john.doe
+                    </td>
+                    <td>
+                        <em>Analysis:</em> Execution policy flags are frequently used during manual system administration or unauthorized script execution to bypass local execution policies.<br>
+                        <em>Action:</em> Review script path update_script.ps1 and parent process svchost.exe (PID 1024) to confirm authorization.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><code>FND-SVC-001</code></td>
+                    <td><span class="badge badge-high">HIGH</span></td>
+                    <td>SERVICE_ANOMALY</td>
+                    <td>
+                        <strong>Service Executable Located in User Public Directory</strong><br>
+                        <em>Observed:</em> Event ID 7045 / Service Registration observed: ImagePath = C:\Users\Public\Downloads\updater_svc.exe
+                    </td>
+                    <td>
+                        <em>Analysis:</em> Standard Windows system services reside in C:\Windows\System32. Binaries running from Public user directories represent an operational anomaly.<br>
+                        <em>Action:</em> Inspect updater_svc.exe file hash and verify digital signature.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><code>FND-DNS-001</code></td>
+                    <td><span class="badge badge-medium">MEDIUM</span></td>
+                    <td>DNS_ANOMALY</td>
+                    <td>
+                        <strong>Repeated NXDOMAIN Responses & High-Frequency DNS Lookups</strong><br>
+                        <em>Observed:</em> Multiple DNS queries observed to sub12.beacon-srv-test.net and sub14.beacon-srv-test.net returning NXDOMAIN (RCODE 3).
+                    </td>
+                    <td>
+                        <em>Analysis:</em> High ratio of failed DNS resolutions can indicate misconfigured services, automated domain generation algorithms (DGA), or stale network telemetry.<br>
+                        <em>Action:</em> Analyze host process generating outbound UDP port 53 traffic to rule out legitimate software query bursts.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><code>FND-HASH-001</code></td>
+                    <td><span class="badge badge-info">INFO</span></td>
+                    <td>FILE_INTEGRITY</td>
+                    <td>
+                        <strong>Cryptographic Hash Baseline Completed</strong><br>
+                        <em>Observed:</em> 4 SHA-256 hashes generated and registered in chain of custody.
+                    </td>
+                    <td>
+                        <em>Analysis:</em> All collected evidence file hashes have been bound to provenance records for reproducible verification.<br>
+                        <em>Action:</em> Submit SHA-256 hashes to threat intelligence repository for baseline comparison if authorized.
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h2>4. Unified Chronological Timeline (Snippet)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Timestamp (UTC)</th>
+                    <th>Type</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <h2>5. Immutable Audit Chain & Provenance Verification</h2>
+        <p>Total Audit Records: <code>22</code></p>
+        <p>Hash Chain Integrity: <span class="badge badge-approved">VERIFIED VALID</span></p>
+        <p>Head Audit Hash: <code>8e2642882dccb02f9442c29dd37ba5917f0288e8fd97a4037c673ae02a6b4979</code></p>
+
+    </div>
+</body>
+</html>

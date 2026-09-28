@@ -1,0 +1,14 @@
+{
+  "dataset_version": "demo-dataset-v1",
+  "synthetic": true,
+  "label": "SYNTHETIC / DEMONSTRATION DATA",
+  "generated_for": "SIH26148 FORGE prototype",
+  "hostname": "FORENSIC-TARGET-01",
+  "os": "Windows 11 Enterprise (Build 22631)",
+  "architecture": "x86_64",
+  "timezone": "UTC+05:30",
+  "boot_time_utc": "2026-09-25T08:00:00Z",
+  "domain": "CORP.LOCAL",
+  "ip_address": "192.168.1.105",
+  "mac_address": "00:15:5D:01:A4:12"
+}

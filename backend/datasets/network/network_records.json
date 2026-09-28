@@ -1,0 +1,110 @@
+{
+  "dataset_version": "demo-dataset-v1",
+  "synthetic": true,
+  "label": "SYNTHETIC / DEMONSTRATION DATA",
+  "generated_for": "SIH26148 FORGE prototype",
+  "mode": "SYNTHETIC NETWORK DATASET",
+  "packet_count": 1420,
+  "connections": [
+    {
+      "id": "FLOW-001",
+      "timestamp_utc": "2026-09-25T14:02:10Z",
+      "src_ip": "192.168.1.105",
+      "src_port": 51234,
+      "dst_ip": "10.0.0.5",
+      "dst_port": 53,
+      "protocol": "UDP",
+      "bytes": 342,
+      "packets": 4
+    },
+    {
+      "id": "FLOW-002",
+      "timestamp_utc": "2026-09-25T14:15:25Z",
+      "src_ip": "192.168.1.105",
+      "src_port": 58921,
+      "dst_ip": "198.51.100.44",
+      "dst_port": 8443,
+      "protocol": "TCP",
+      "bytes": 45120,
+      "packets": 86
+    },
+    {
+      "id": "FLOW-003",
+      "timestamp_utc": "2026-09-25T14:15:30Z",
+      "src_ip": "192.168.1.105",
+      "src_port": 58922,
+      "dst_ip": "203.0.113.88",
+      "dst_port": 443,
+      "protocol": "TCP",
+      "bytes": 12840,
+      "packets": 32
+    },
+    {
+      "id": "FLOW-004",
+      "timestamp_utc": "2026-09-25T14:16:02Z",
+      "src_ip": "192.168.1.105",
+      "src_port": 58925,
+      "dst_ip": "198.51.100.44",
+      "dst_port": 8443,
+      "protocol": "TCP",
+      "bytes": 38400,
+      "packets": 70
+    }
+  ],
+  "dns_activity": [
+    {
+      "timestamp_utc": "2026-09-25T14:02:10Z",
+      "query_domain": "internal.corp.local",
+      "query_type": "A",
+      "response_code": "NOERROR",
+      "resolved_ip": "10.0.0.5",
+      "client_ip": "192.168.1.105"
+    },
+    {
+      "timestamp_utc": "2026-09-25T14:15:15Z",
+      "query_domain": "update.beacon-srv-test.net",
+      "query_type": "A",
+      "response_code": "NOERROR",
+      "resolved_ip": "198.51.100.44",
+      "client_ip": "192.168.1.105"
+    },
+    {
+      "timestamp_utc": "2026-09-25T14:15:18Z",
+      "query_domain": "sub12.beacon-srv-test.net",
+      "query_type": "A",
+      "response_code": "NXDOMAIN",
+      "resolved_ip": null,
+      "client_ip": "192.168.1.105"
+    },
+    {
+      "timestamp_utc": "2026-09-25T14:15:20Z",
+      "query_domain": "sub14.beacon-srv-test.net",
+      "query_type": "A",
+      "response_code": "NXDOMAIN",
+      "resolved_ip": null,
+      "client_ip": "192.168.1.105"
+    }
+  ],
+  "protocol_stats": [
+    {
+      "protocol": "TCP",
+      "count": 1050,
+      "percentage": 73.9
+    },
+    {
+      "protocol": "UDP",
+      "count": 280,
+      "percentage": 19.7
+    },
+    {
+      "protocol": "DNS",
+      "count": 60,
+      "percentage": 4.2
+    },
+    {
+      "protocol": "HTTP/HTTPS",
+      "count": 30,
+      "percentage": 2.2
+    }
+  ]
+}

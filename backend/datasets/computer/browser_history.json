@@ -1,0 +1,32 @@
+{
+  "dataset_version": "demo-dataset-v1",
+  "synthetic": true,
+  "label": "SYNTHETIC / DEMONSTRATION DATA",
+  "generated_for": "SIH26148 FORGE prototype",
+  "history": [
+    {
+      "id": 1,
+      "url": "https://internal.corp.local/login",
+      "title": "Corporate Single Sign-On",
+      "visit_time_utc": "2026-09-25T14:05:10Z",
+      "visit_count": 12,
+      "browser": "Chrome"
+    },
+    {
+      "id": 2,
+      "url": "https://pastebin.org/raw/temp89342",
+      "title": "Pastebin Raw Content",
+      "visit_time_utc": "2026-09-25T14:14:02Z",
+      "visit_count": 1,
+      "browser": "Chrome"
+    },
+    {
+      "id": 3,
+      "url": "https://docs.python.org/3/library/ast.html",
+      "title": "ast \u2014 Abstract Syntax Trees \u2014 Python documentation",
+      "visit_time_utc": "2026-09-25T14:20:00Z",
+      "visit_count": 5,
+      "browser": "Chrome"
+    }
+  ]
+}

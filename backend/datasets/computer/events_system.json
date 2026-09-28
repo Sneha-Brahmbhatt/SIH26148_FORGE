@@ -1,0 +1,33 @@
+{
+  "dataset_version": "demo-dataset-v1",
+  "synthetic": true,
+  "label": "SYNTHETIC / DEMONSTRATION DATA",
+  "generated_for": "SIH26148 FORGE prototype",
+  "events": [
+    {
+      "event_id": 6005,
+      "provider": "EventLog",
+      "channel": "System",
+      "timestamp_utc": "2026-09-25T08:00:00Z",
+      "task": "System Startup",
+      "level": "Information",
+      "computer": "FORENSIC-TARGET-01",
+      "message": "The Event log service was started.",
+      "data": {}
+    },
+    {
+      "event_id": 7045,
+      "provider": "Service Control Manager",
+      "channel": "System",
+      "timestamp_utc": "2026-09-25T14:16:05Z",
+      "task": "Service Installation",
+      "level": "Warning",
+      "computer": "FORENSIC-TARGET-01",
+      "message": "A service was installed in the system: CustomUpdaterSvc",
+      "data": {
+        "ServiceName": "CustomUpdaterSvc",
+        "ImagePath": "C:\\Users\\Public\\Downloads\\updater_svc.exe"
+      }
+    }
+  ]
+}

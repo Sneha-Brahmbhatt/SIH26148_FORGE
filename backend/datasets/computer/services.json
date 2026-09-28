@@ -1,0 +1,32 @@
+{
+  "dataset_version": "demo-dataset-v1",
+  "synthetic": true,
+  "label": "SYNTHETIC / DEMONSTRATION DATA",
+  "generated_for": "SIH26148 FORGE prototype",
+  "services": [
+    {
+      "name": "wuauserv",
+      "display_name": "Windows Update",
+      "state": "RUNNING",
+      "start_type": "AUTOMATIC",
+      "binary_path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+      "account": "LocalSystem"
+    },
+    {
+      "name": "WinDefend",
+      "display_name": "Microsoft Defender Antivirus Service",
+      "state": "RUNNING",
+      "start_type": "AUTOMATIC",
+      "binary_path": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.23110.3-0\\MsMpEng.exe",
+      "account": "NT AUTHORITY\\SYSTEM"
+    },
+    {
+      "name": "CustomUpdaterSvc",
+      "display_name": "Background System Update Helper",
+      "state": "RUNNING",
+      "start_type": "AUTOMATIC",
+      "binary_path": "C:\\Users\\Public\\Downloads\\updater_svc.exe",
+      "account": "LocalSystem"
+    }
+  ]
+}

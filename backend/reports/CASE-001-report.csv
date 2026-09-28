@@ -1,0 +1,9 @@
+# FORGE FORENSIC REPORT - FINDINGS SUMMARY
+# Safety Statement,"FORGE is intended only for authorized digital-forensic investigations and controlled security environments. It does not bypass, disable, evade, or interfere with endpoint security controls."
+# Disclaimer,SYNTHETIC / DEMONSTRATION DATA: Results generated from synthetic datasets for SIH26148 FORGE prototype.
+
+Finding ID,Severity,Category,Timestamp UTC,Title,Observed Evidence,Confidence
+FND-PROC-001,HIGH,PROCESS_ANOMALY,2026-09-25T14:15:22Z,Execution Policy Bypass Command Identified,Process start event observed: Process Start: powershell.exe (PID 2840) -> Cmdline: powershell.exe -ExecutionPolicy Bypass -File C:\Users\john.doe\AppData\Local\Temp\update_script.ps1 | User: CORP\john.doe,HIGH (0.92)
+FND-SVC-001,HIGH,SERVICE_ANOMALY,2026-09-25T14:16:05Z,Service Executable Located in User Public Directory,Event ID 7045 / Service Registration observed: ImagePath = C:\Users\Public\Downloads\updater_svc.exe,HIGH (0.88)
+FND-DNS-001,MEDIUM,DNS_ANOMALY,2026-09-25T08:00:00Z,Repeated NXDOMAIN Responses & High-Frequency DNS Lookups,Multiple DNS queries observed to sub12.beacon-srv-test.net and sub14.beacon-srv-test.net returning NXDOMAIN (RCODE 3).,MEDIUM (0.75)
+FND-HASH-001,INFO,FILE_INTEGRITY,2026-09-25T14:20:00Z,Cryptographic Hash Baseline Completed,4 SHA-256 hashes generated and registered in chain of custody.,HIGH (1.00)
