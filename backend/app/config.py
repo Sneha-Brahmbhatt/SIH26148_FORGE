@@ -2,7 +2,13 @@
 FORGE Application Configuration Settings
 """
 
-from pydantic_settings import BaseSettings
+try:
+    from pydantic_settings import BaseSettings
+except ImportError:
+    try:
+        from pydantic.v1 import BaseSettings
+    except ImportError:
+        from pydantic import BaseModel as BaseSettings
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "FORGE — Forensic Object Runtime & Governed Execution"
@@ -14,7 +20,8 @@ class Settings(BaseSettings):
         "http://localhost:3000",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:3000",
-        "*"
+        "https://frontend-orpin-beta-91.vercel.app",
+        "https://frontend-hyxdypwg8-sneha-1694.vercel.app"
     ]
 
 settings = Settings()
