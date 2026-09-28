@@ -29,12 +29,19 @@ export const DashboardPage: React.FC = () => {
         apiClient.getFindings(),
         apiClient.getAuditLogs()
       ]);
-      setCasesCount(cases.length || 1);
-      setExecutions(execs || []);
-      setEvidenceCount(evd.length || 0);
-      setTimelineEvents(tls || []);
-      setFindings(fnds || []);
-      setAuditLogs(audits || []);
+      const safeCases = Array.isArray(cases) ? cases : [];
+      const safeExecs = Array.isArray(execs) ? execs : [];
+      const safeEvd = Array.isArray(evd) ? evd : [];
+      const safeTls = Array.isArray(tls) ? tls : [];
+      const safeFnds = Array.isArray(fnds) ? fnds : [];
+      const safeAudits = Array.isArray(audits) ? audits : [];
+
+      setCasesCount(safeCases.length || 1);
+      setExecutions(safeExecs);
+      setEvidenceCount(safeEvd.length || 0);
+      setTimelineEvents(safeTls);
+      setFindings(safeFnds);
+      setAuditLogs(safeAudits);
     } catch (err) {
       console.error('Error loading dashboard data', err);
     }
@@ -61,7 +68,11 @@ export const DashboardPage: React.FC = () => {
     }
   };
 
-  const highFindings = findings.filter(f => f.severity === 'HIGH').length;
+  const safeFindings = Array.isArray(findings) ? findings : [];
+  const safeExecutions = Array.isArray(executions) ? executions : [];
+  const safeAuditLogs = Array.isArray(auditLogs) ? auditLogs : [];
+
+  const highFindings = safeFindings.filter(f => f && f.severity === 'HIGH').length;
 
   return (
     <div className="p-6 space-y-6">
@@ -176,7 +187,7 @@ export const DashboardPage: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/60">
-                {executions.slice(0, 5).map((ex) => (
+                {safeExecutions.slice(0, 5).map((ex) => (
                   <tr key={ex.execution_id} className="hover:bg-slate-800/40">
                     <td className="py-2.5 font-bold text-cyan-400">{ex.execution_id}</td>
                     <td className="py-2.5 text-slate-300">{ex.case_id}</td>
@@ -216,7 +227,7 @@ export const DashboardPage: React.FC = () => {
           </div>
 
           <div className="space-y-2 font-mono text-xs max-h-72 overflow-y-auto pr-1">
-            {auditLogs.slice(-6).reverse().map((log) => (
+            {safeAuditLogs.slice(-6).reverse().map((log) => (
               <div
                 key={log.audit_id}
                 className="bg-slate-950/80 p-2.5 rounded border border-slate-800 flex items-start justify-between"

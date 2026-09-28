@@ -6,15 +6,27 @@ import {
 
 const API_BASE = (((import.meta as any).env?.VITE_FORENSIC_API_URL as string) || '').replace(/\/$/, '') + '/api/v1';
 
+const safeArray = <T>(data: any): T[] => {
+  return Array.isArray(data) ? data : [];
+};
+
 export const apiClient = {
   getHealth: async () => {
-    const res = await axios.get(`${API_BASE}/health`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/health`);
+      return typeof res.data === 'object' && res.data ? res.data : { status: 'OFFLINE' };
+    } catch {
+      return { status: 'OFFLINE' };
+    }
   },
 
   getCases: async (): Promise<Case[]> => {
-    const res = await axios.get(`${API_BASE}/cases`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/cases`);
+      return safeArray<Case>(res.data);
+    } catch {
+      return [];
+    }
   },
 
   createCase: async (title: string, description: string): Promise<Case> => {
@@ -51,8 +63,12 @@ export const apiClient = {
   },
 
   getExecutions: async (): Promise<any[]> => {
-    const res = await axios.get(`${API_BASE}/executions`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/executions`);
+      return safeArray(res.data);
+    } catch {
+      return [];
+    }
   },
 
   getExecutionDetails: async (id: string): Promise<Execution> => {
@@ -61,47 +77,138 @@ export const apiClient = {
   },
 
   getEvidence: async (): Promise<EvidenceItem[]> => {
-    const res = await axios.get(`${API_BASE}/evidence`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/evidence`);
+      return safeArray<EvidenceItem>(res.data);
+    } catch {
+      return [];
+    }
   },
 
   getTimeline: async (): Promise<TimelineEvent[]> => {
-    const res = await axios.get(`${API_BASE}/timeline`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/timeline`);
+      return safeArray<TimelineEvent>(res.data);
+    } catch {
+      return [];
+    }
   },
 
   getFindings: async (): Promise<Finding[]> => {
-    const res = await axios.get(`${API_BASE}/findings`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/findings`);
+      return safeArray<Finding>(res.data);
+    } catch {
+      return [];
+    }
   },
 
   getAuditLogs: async (): Promise<AuditLogItem[]> => {
-    const res = await axios.get(`${API_BASE}/audit`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/audit`);
+      return safeArray<AuditLogItem>(res.data);
+    } catch {
+      return [];
+    }
   },
 
   getChainOfCustody: async (case_id = 'CASE-001') => {
-    const res = await axios.get(`${API_BASE}/chain-of-custody/${case_id}`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/chain-of-custody/${case_id}`);
+      return typeof res.data === 'object' && res.data ? res.data : { chain_events: [], evidence_items: [] };
+    } catch {
+      return { chain_events: [], evidence_items: [] };
+    }
   },
 
   getReports: async (): Promise<ReportItem[]> => {
-    const res = await axios.get(`${API_BASE}/reports`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/reports`);
+      return safeArray<ReportItem>(res.data);
+    } catch {
+      return [];
+    }
   },
 
   getLanguageReference: async () => {
-    const res = await axios.get(`${API_BASE}/language/reference`);
-    return res.data;
+    try {
+      const res = await axios.get(`${API_BASE}/language/reference`);
+      return res.data;
+    } catch {
+      return { commands: [], prohibited_capabilities: [] };
+    }
   },
 
   // Forensics sub-system details
-  getHosts: async () => (await axios.get(`${API_BASE}/hosts`)).data,
-  getProcesses: async () => (await axios.get(`${API_BASE}/processes`)).data,
-  getServices: async () => (await axios.get(`${API_BASE}/services`)).data,
-  getFiles: async () => (await axios.get(`${API_BASE}/files`)).data,
-  getEvents: async (source = 'System') => (await axios.get(`${API_BASE}/events?source=${source}`)).data,
-  getNetworkFlows: async () => (await axios.get(`${API_BASE}/network/flows`)).data,
-  getNetworkDNS: async () => (await axios.get(`${API_BASE}/network/dns`)).data,
-  getNetworkProtocols: async () => (await axios.get(`${API_BASE}/network/protocols`)).data,
+  getHosts: async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/hosts`);
+      return safeArray(res.data);
+    } catch {
+      return [];
+    }
+  },
+
+  getProcesses: async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/processes`);
+      return safeArray(res.data);
+    } catch {
+      return [];
+    }
+  },
+
+  getServices: async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/services`);
+      return safeArray(res.data);
+    } catch {
+      return [];
+    }
+  },
+
+  getFiles: async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/files`);
+      return safeArray(res.data);
+    } catch {
+      return [];
+    }
+  },
+
+  getEvents: async (source = 'System') => {
+    try {
+      const res = await axios.get(`${API_BASE}/events?source=${source}`);
+      return safeArray(res.data);
+    } catch {
+      return [];
+    }
+  },
+
+  getNetworkFlows: async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/network/flows`);
+      return safeArray(res.data);
+    } catch {
+      return [];
+    }
+  },
+
+  getNetworkDNS: async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/network/dns`);
+      return safeArray(res.data);
+    } catch {
+      return [];
+    }
+  },
+
+  getNetworkProtocols: async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/network/protocols`);
+      return safeArray(res.data);
+    } catch {
+      return [];
+    }
+  },
 };
